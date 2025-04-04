@@ -1,0 +1,26 @@
+# List Comprehension: Efficiently manipulate lists while saving storage on the server
+
+# Example: Converting temperatures by dividing them by 10
+
+temps = [221, 331, 141, 122]
+
+# 1. **Basic List Comprehension**
+# This method creates a new list by dividing each element in the original list by 10
+new_temps = [temp / 10 for temp in temps]
+print(new_temps)  # Output: [22.1, 33.1, 14.1, 12.2]
+
+# **Note**: The result contains floating-point numbers, but we can save storage by avoiding floats.
+
+# 2. **List Comprehension with Conditional Filtering (if statement)**
+
+# This example filters out a specific value (141) before performing the division operation
+new_temps = [temp / 10 for temp in temps if temp != 141]
+print(new_temps)  # Output: [22.1, 33.1, 12.2]
+# 141 is removed from the result as it does not meet the condition (temp != 141)
+
+# 3. **List Comprehension with if-else Statement**
+
+# In this case, if the value equals 141, it will be replaced by 0 instead of being divided
+new_temps = [temp / 10 if temp != 141 else 0 for temp in temps]
+print(new_temps)  # Output: [22.1, 33.1, 0, 12.2]
+# 141 is replaced by 0 in the resulting list, while the others are divided by 10
